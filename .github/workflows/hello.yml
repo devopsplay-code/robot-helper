@@ -1,0 +1,10 @@
+name: Say Hello
+
+on: push
+
+jobs:
+    greet_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Greet
+              run: echo "Hello Wrold! 🤖👋"
