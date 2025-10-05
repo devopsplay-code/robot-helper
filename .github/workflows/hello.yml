@@ -1,10 +1,18 @@
-name: Say Hello
+name: Run Python Script
 
 on: push
 
 jobs:
-    greet_job:
+    run_python:
         runs-on: ubuntu-latest
         steps:
-            - name: Greet
-              run: echo "Hello Wrold! 🤖👋"
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up python
+              uses: actions/setup-python@v4
+              with:
+                python-version: "3.10"
+                
+            - name: Run Python script
+              run: python hello.py
